@@ -54,7 +54,7 @@
 
 
         // console.log("Clase perrona " + nombre);
-        alert("Este es el inicio de una nueva era");
+       // alert("Este es el inicio de una nueva era");
     };
     reset.addEventListener('click', handleSettingsSubmission);
 
