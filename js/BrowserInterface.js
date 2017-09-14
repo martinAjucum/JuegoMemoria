@@ -50,11 +50,12 @@
             var nombre = enlaces[1].className;
             console.log("Clase perrona " + nombre);
         }
-
+        /*ver*/
+        var single = AudioFX('sounds/single', { formats: ['ogg', 'mp3', 'm4a'], volume: 0.1 });
 
 
         // console.log("Clase perrona " + nombre);
-       // alert("Este es el inicio de una nueva era");
+        // alert("Este es el inicio de una nueva era");
     };
     reset.addEventListener('click', handleSettingsSubmission);
 

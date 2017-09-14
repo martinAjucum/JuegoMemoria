@@ -158,8 +158,9 @@ var MemoryGame = {
             var status = {};
             var value = this.cards[index].value;
             console.log("Card Number: " + value)
-
-            //var single = AudioFX('sounds/single', { formats: ['ogg', 'mp3', 'm4a'], volume: 0.1 });
+                //Inlcusion del audio
+            var single = AudioFX('sounds/single', { formats: ['ogg', 'mp3', 'm4a'], volume: 0.1 });
+            single.play();
 
             if (!this.cards[index].isRevealed) {
                 this.cards[index].reveal();
@@ -208,9 +209,13 @@ var MemoryGame = {
                             status.code = 4,
                                 status.message = 'Juego Terminado! Aciertos: ' + this.attempts +
                                 ', Errores: ' + this.mistakes;
+                            //prueba audio eparejado
+                            pool.play();
                         } else {
                             status.code = 2,
                                 status.message = 'Emparejado.';
+                            //prueba audio eparejado
+                            pool.play();
                         }
                     }
                     cardSelection = [];
