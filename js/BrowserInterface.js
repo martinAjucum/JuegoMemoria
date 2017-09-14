@@ -94,13 +94,13 @@
         var message = "";
 
         if (score == 100) {
-            message = "Amazing job!"
+            message = "Incleible Trabaj!"
         } else if (score >= 70) {
-            message = "Great job!"
+            message = "Buen Trabajo!"
         } else if (score >= 50) {
-            message = "Great job!"
+            message = "Buen Trabajo!"
         } else {
-            message = "You can do better.";
+            message = "Puedes hacerlo mejor.";
         }
 
         return message;
