@@ -4,10 +4,6 @@
  * de enparejamiento.
 
  */
-
-/**
- * @namespace The main application object
- */
 var MemoryGame = {
 
     settings: {
@@ -58,8 +54,6 @@ var MemoryGame = {
             this.mistakes = 0;
             this.isGameOver = false;
             this.createCards().shuffleCards();
-            //new
-            // this.createCards().addAudio();
         }
 
         return this.cards;
@@ -102,11 +96,11 @@ var MemoryGame = {
             // Si el elemento no es falso, añadir elemento a la baraja arrastrada 
             if (cards[randomIndex]) {
 
-                // Add new element to shuffle deck
+
                 // Añadir nuevo elemento  a la baraja
                 shuffledCards.push(cards[randomIndex]);
 
-                // Set element to false to avoid being reused
+
                 // Evitar usar elemento ya barajeado
                 cards[randomIndex] = false;
             }
@@ -117,31 +111,6 @@ var MemoryGame = {
 
         return this;
     },
-    /**
-     * Añadir audio 
-     * @return Reference to self object
-     */
-    /* addAudio: function() {
-
-         // return function(index) {
-         var status = {};
-         var value = this.cards[0].value;
-         console.log("Card Number2: " + value);
-
-
-
-         //  status.code = 0,
-         //     status.message = 'Carta mirando hacia arriba.';
-
-
-         // return status;
-
-         //  };
-
-         this.cards = addAudio;
-
-         return this;
-     },*/
     /**
      * Un jugador puede jugar dos cartas. Esta función devuelve información
      * sobre lo que pasa cuando se selecciona una tarjeta.
@@ -157,11 +126,15 @@ var MemoryGame = {
         return function(index) {
             var status = {};
             var value = this.cards[index].value;
+
+            /************ AUDIO *****************/
+            //Se obtine el valor de la carta y se asocia a su audio
             var audio = "card-" + value;
             console.log(audio)
-                //Inlcusion del audio
+                //INCLUSION DEL AUDIO
             var single = AudioFX('sounds/' + audio, { formats: ['mp3'], volume: 0.2 });
             single.play();
+            /************ AUDIO *****************/
 
             if (!this.cards[index].isRevealed) {
                 this.cards[index].reveal();

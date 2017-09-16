@@ -1,17 +1,12 @@
 /**
- * Author: Maximo Mena
- * GitHub: mmenavas
- * Twitter: @menamaximo
- * Project: Memory Workout
- * Description: The game interface
+ * Juego de memoria
+ * Descripcion: carga de interfaz grafica
  */
 
-/**
- * @TODO Refactor code.
- */
+
 (function($) {
 
-    // Handle clicking on settings icon
+    // click en el boton home
     var settings = document.getElementById('memory--settings-icon');
     var modal = document.getElementById('memory--settings-modal');
     var handleOpenSettings = function(event) {
@@ -20,7 +15,7 @@
     };
     settings.addEventListener('click', handleOpenSettings);
 
-    // Handle settings form submission
+    // Manejo del formulario de configuracion
     var reset = document.getElementById('memory--settings-reset');
     var handleSettingsSubmission = function(event) {
         event.preventDefault();
@@ -38,6 +33,9 @@
             buildLayout($.cards, $.settings.rows, $.settings.columns);
         }
 
+
+        //Acediendo a la clase de cada card           
+
         // var contenedor = document.getElementById("memory--app-container");
         var cartas = document.getElementById("memory--cards");
         var lista = cartas.getElementsByTagName("li");
@@ -48,18 +46,13 @@
             var contenedor = girar[0];
             var enlaces = contenedor.getElementsByTagName("a");
             var nombre = enlaces[1].className;
-            console.log("Clase perrona " + nombre);
+            console.log("Clase: " + nombre);
         }
-        /*ver*/
-        var single = AudioFX('sounds/single', { formats: ['ogg', 'mp3', 'm4a'], volume: 0.1 });
 
-
-        // console.log("Clase perrona " + nombre);
-        // alert("Este es el inicio de una nueva era");
     };
     reset.addEventListener('click', handleSettingsSubmission);
 
-    // Handle clicking on card
+    // Click sobre una carta
     var handleFlipCard = function(event) {
 
         event.preventDefault();
@@ -106,7 +99,7 @@
         return message;
     }
 
-    // Build grid of cards
+    // Creando el grid para una carta
     var buildLayout = function(cards, rows, columns) {
         if (!cards.length) {
             return;
@@ -121,7 +114,7 @@
         var cardMaxHeight = document.getElementById('memory--app-container').offsetHeight / rows;
         var cardWidthForMaxHeight = cardMaxHeight * (4 / 3);
 
-        // Clean up. Remove all child nodes and card clicking event listeners.
+        // Limpiar. Quitando todos los nodos hijo y tarjetas con el  event listeners.
         while (memoryCards.firstChild) {
             memoryCards.firstChild.removeEventListener('click', handleFlipCard);
             memoryCards.removeChild(memoryCards.firstChild);
@@ -129,7 +122,7 @@
 
         for (var i = 0; i < rows; i++) {
             for (var j = 0; j < columns; j++) {
-                // Use cloneNode(true) otherwise only one node is appended
+                // Usar cloneNode(true) de lo contrario solo se agrega un nodo
                 memoryCards.appendChild(buildCardNode(
                     index, cards[index].value, cards[index].isRevealed,
                     (100 / columns) + "%", (100 / rows) + "%"));
@@ -137,14 +130,14 @@
             }
         }
 
-        // Resize cards to fit in viewport
+        // Resimensionar las tarjetas para que quepan en el viewport
         if (cardMaxHeight > cardHeightForMaxWidth) {
-            // Update height
+            // Actualizando altura
             memoryCards.style.height = (cardHeightForMaxWidth * rows) + "px";
             memoryCards.style.width = document.getElementById('memory--app-container').offsetWidth + "px";
             memoryCards.style.top = ((cardMaxHeight * rows - (cardHeightForMaxWidth * rows)) / 2) + "px";
         } else {
-            // Update Width
+            // Actualizando ancho
             memoryCards.style.width = (cardWidthForMaxHeight * columns) + "px";
             memoryCards.style.height = document.getElementById('memory--app-container').offsetHeight + "px";
             memoryCards.style.top = 0;
@@ -152,12 +145,12 @@
 
     };
 
-    // Update on resize
+    // Actualizando tamaño
     window.addEventListener('resize', function() {
         buildLayout($.cards, $.settings.rows, $.settings.columns);
     }, true);
 
-    // Build single card
+    // Construyendo una carta simple
     var buildCardNode = function(index, value, isRevealed, width, height) {
         var flipContainer = document.createElement("li");
         var flipper = document.createElement("div");
