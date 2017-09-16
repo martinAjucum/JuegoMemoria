@@ -22,7 +22,7 @@ if(isset($_GET["error"]) && $_GET["error"] != "login") {
 
 	<meta charset="UTF-8">
 
-	<title>Título de la página</title>
+	<title>Login</title>
 
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
 
@@ -34,7 +34,7 @@ if(isset($_GET["error"]) && $_GET["error"] != "login") {
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/estilos.css">
 
  
 
@@ -42,11 +42,14 @@ if(isset($_GET["error"]) && $_GET["error"] != "login") {
 
 <body>
 
- 
+ <header >
+        <div class="container text-center">
+            <h1>Login Kiche Memoria</h1>
+        </div>
+    </header>
 
-	<div class=" container login">
+	<div class="container">
 
-		<h1>Login</h1>
 
 		<?php
 
@@ -54,7 +57,7 @@ if(isset($_GET["error"]) && $_GET["error"] != "login") {
 
 			if(isset($_GET["error"])) {
 
-				echo "<p class='error'>Usuario y / o Contrasea erroneos. Intentelo de nuevo.</p>";
+				echo "<div class='alert alert-danger'><p>Usuario y / o Contrasea erroneos. Intentelo de nuevo.</p></div>";
 
 			}
 
@@ -63,7 +66,7 @@ if(isset($_GET["error"]) && $_GET["error"] != "login") {
 		 ?>
 
 		<form action="ingresar.php" method="post">
-
+			<h3 class="form-signin-heading">Bienvenido!</h3>
 			<div class="form-group">
 
 				<input type="text" class="form-control" name="usuario" placeholder="Usuario" required>
@@ -76,8 +79,8 @@ if(isset($_GET["error"]) && $_GET["error"] != "login") {
 
 			</div>
 
-			<button type="submit" name="enviar" class="btn btn-primary">Entrar</button>
-
+			<button type="submit" name="enviar" class="btn btn-lg btn-primary btn-block">Entrar</button>
+			<a class="btn btn-primary btn-block" href="index.html">Cancelar</a>
 		</form>
 
 	</div>

@@ -1,0 +1,57 @@
+body{
+  background-color: #eee;
+}
+header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 10px;
+    margin: 0px 0px 20px 0px;
+}
+
+.main {
+    background: #f2f2f2;
+}
+
+.color1 {
+    background: #34495e;
+    color: #fff;
+}
+
+aside {
+    background: #c0392b;
+    color: #fff;
+}
+
+footer {
+    background: #16a085;
+    color: #fff;
+    margin: 20px 0px 0px 0px;
+padding: 10px;
+}
+.header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 10px;
+    margin: 0px 0px 20px 0px;
+}
+.jumbotron{
+background: #2c3e50;
+    color: #fff;
+    padding: 10px;
+    margin: 0px 0px 20px 0px;
+}
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
