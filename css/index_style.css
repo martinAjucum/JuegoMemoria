@@ -1,0 +1,133 @@
+*{
+	margin:0px;
+	padding:0px;
+	
+}
+
+/*titulo*/
+.encabezado 
+{
+	padding: 10px;
+}
+
+p#header{
+
+	
+	text-align: center;
+	font-size: 3.5em;
+	color:#FFFFFF;
+	font-family: 'Chewy', cursive;
+}
+p#subheader{
+	text-align: center;
+	color:#000000;
+	margin-top:20px;
+	font-size: 1.8em;
+}
+
+header{
+	margin:100px auto;
+	width:1000px;
+	height:230px;
+	background-color: red;
+}
+
+div.contenedor{
+	width: 200px;
+	height: 230px;
+	float:left;
+	-webkit-transition: height .4s;
+}
+
+div#uno{
+	background-color: rgb(208,101,3);
+	font-size: 1.5em;
+}
+
+div#dos{
+	background-color: rgb(233,147,26);
+	font-size: 1.5em;
+}
+
+div#tres{
+	background-color: rgb(22,145,190);
+	font-size: 1.5em;
+}
+
+div#cuatro{
+	background-color: rgb(22,107,162);
+	font-size: 1.2em;
+}
+
+div#cinco{
+	background-color: rgb(27,54,71);
+	font-size: 1.5em;
+}
+
+
+
+img.icon{
+	display: block;
+	margin:50px auto;
+	background-color: rgba(255,255,255,.15);
+	width:40px;
+	padding:20px;
+	-webkit-border-radius: 50%;
+	-webkit-box-shadow: 0px 0px 0px 30px rgba(255,255,255,0);
+	-webkit-transition:box-shadow .4s;
+}
+
+p.texto{
+	font-family: 'Indie Flower', cursive;
+	color:white;
+	text-align: center;
+	padding-top:10px;
+	opacity: .6;
+	-webkit-transition: padding-top .4s;
+}
+
+div.contenedor:hover{
+	height:250px;
+}
+
+div.contenedor:hover p.texto{
+	padding-top: 30px;
+	opacity: 1;
+}
+
+div.contenedor:hover img.icon{
+	-webkit-box-shadow:0px 0px 0px 0px rgba(255,255,255,.6);
+}
+
+
+
+section{
+    font-family: arial; /*Opc*/
+    color:gray;/*Opc cambienlo al color conveniente*/
+    
+    height: 800px; /*Acá ponen la altura que quieran*/
+    width:100%; /*Hace que ocupe toda la pantalla horizontalmente*/
+    text-align: center; /*Opc pero recomendado*/
+    background-attachment: fixed;/*Esto hace que el fondo siempre este en la misma posición*/
+    background-size: cover;
+    background-repeat: no-repeat; /*Todos sabemos para que es esto*/
+	
+}
+.primero{
+    background-image: url('../img/fondo1.jpg');
+}
+.segundo{
+    background-image: url('../img/2.jpg');
+}
+.tercero{
+    background-image: url('../img/3.jpg');
+}
+
+section{
+    /*Codigo...*/
+    box-shadow: 0 -5px 3px rgba(0,0,0,0.5);
+}
+.primero{
+    /*Codigo...*/
+    box-shadow: none;/*Hace que la <section> de arriba del todo no tenga una sombra*/
+}
