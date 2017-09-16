@@ -34,8 +34,8 @@ var MemoryGame = {
             !(typeof rows === 'number' && (rows % 1) === 0) && rows > 1) {
             validOptions = false;
             throw {
-                name: "invalidInteger",
-                message: "Both rows and columns need to be integers greater than 1."
+                name: "Entero no valido",
+                message: "Ambos valores necesitan ser mayores a 1."
             };
         }
 
@@ -43,7 +43,7 @@ var MemoryGame = {
             validOptions = false;
             throw {
                 name: "oddNumber",
-                message: "Either rows or columns needs to be an even number."
+                message: "Ambas comlumnas necesitan ser un numero."
             };
         }
 
@@ -80,7 +80,7 @@ var MemoryGame = {
 
     /**
      * Reorganizar elementos en el array de tarjetas
-     * @return Reference to self object
+     * @return Referencia al mismo objeto
      */
     shuffleCards: function() {
         var cards = this.cards;
@@ -132,7 +132,7 @@ var MemoryGame = {
             var audio = "card-" + value;
             console.log(audio)
                 //INCLUSION DEL AUDIO
-            var single = AudioFX('sounds/' + audio, { formats: ['mp3'], volume: 0.2 });
+            var single = AudioFX('sounds/' + audio, { formats: ['mp3'], volume: 1.0 });
             single.play();
             /************ AUDIO *****************/
 
