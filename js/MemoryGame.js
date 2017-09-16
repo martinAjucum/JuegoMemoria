@@ -157,9 +157,10 @@ var MemoryGame = {
         return function(index) {
             var status = {};
             var value = this.cards[index].value;
-            console.log("Card Number: " + value)
+            var audio = "card-" + value;
+            console.log(audio)
                 //Inlcusion del audio
-            var single = AudioFX('sounds/single', { formats: ['ogg', 'mp3', 'm4a'], volume: 0.1 });
+            var single = AudioFX('sounds/' + audio, { formats: ['mp3'], volume: 0.2 });
             single.play();
 
             if (!this.cards[index].isRevealed) {

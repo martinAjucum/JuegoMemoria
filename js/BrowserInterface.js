@@ -83,7 +83,7 @@
 
             document.getElementById('memory--end-game-message').textContent = message;
             document.getElementById('memory--end-game-score').textContent =
-                'Score: ' + score + ' / 100';
+                'Puntuación: ' + score + ' / 100';
 
             document.getElementById("memory--end-game-modal").classList.toggle('show');
         }
@@ -94,7 +94,7 @@
         var message = "";
 
         if (score == 100) {
-            message = "Incleible Trabaj!"
+            message = "Increible Trabajo!"
         } else if (score >= 70) {
             message = "Buen Trabajo!"
         } else if (score >= 50) {
