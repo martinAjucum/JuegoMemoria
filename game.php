@@ -34,7 +34,7 @@
             <option value="5x6">Experto</option>
           </select>
                 <input id="memory--settings-reset" type="submit" value="Iniciar Nuevo Juego" />
-                <input id="memory--settings-reset" type="button" value="Salir" />
+              <a href="salir.php">  <input id="memory--settings-reset" type="button" value="Salir" /></a>
 
             </form>
         </div>
@@ -61,12 +61,7 @@
             </div>
         </div>
     </section>
-    <a href="salir.php">Salir</a>
-    <!--h1>Experimenting with HTML5 Audio</h1>
-
-    <input type='button' value='POOL' onclick="pool.play()" />
-    <input type='button' value='SINGLE' onclick="single.play()" /-->
-
+<!-- Crag audio -->
 
     <script src="js/audio-fx.js"></script>
     <script>
